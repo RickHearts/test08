@@ -8,8 +8,19 @@ pipeline {
     }
 
     stage('Firefox') {
-      steps {
-        echo 'Mozilla Test'
+      parallel {
+        stage('Firefox') {
+          steps {
+            echo 'Firefox Test'
+          }
+        }
+
+        stage('Mozilla') {
+          steps {
+            echo 'Mozilla Message'
+          }
+        }
+
       }
     }
 
