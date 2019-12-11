@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('Firefox') {
+      steps {
+        echo 'Mozilla Test'
+      }
+    }
+
   }
 }
